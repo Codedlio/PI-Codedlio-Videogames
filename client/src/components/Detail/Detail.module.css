@@ -1,0 +1,165 @@
+
+@import url('../../styles/variables.css');
+body{
+  background-color: rgb(27, 21, 19);
+  box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.5);
+}
+.mayor {
+  @import url('../../styles/variables.css');
+  
+  }
+ 
+  
+  .container_creategame {
+
+    min-height: calc(100vh - 8rem);
+  width: var(--main-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding-bottom: 6rem;
+  background-color: rgb(45, 39, 39);
+  }
+   
+ 
+  .container_main_image {
+    
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  img {
+    
+    opacity: 0.6;
+    width: 80%;
+    transition: opacity 1s ease 0s;
+    box-shadow: 0 0 20px 20px rgba(68, 39, 38, 0.65);
+  }
+  img:hover {     
+        
+    opacity: .8   
+  }
+  .main_image {
+    
+    position: relative;
+    
+    
+  }
+  .description_container {
+    
+    
+  }
+  .description_container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .data_container {
+    width: 80%;
+    display: flex;
+justify-content: center;
+flex-wrap: wrap;
+column-gap: 20rem;
+row-gap: 1rem;
+padding-bottom: 4rem;
+text-align: justify;
+    
+  }
+  
+  .title {
+    text-align: left;
+  color: coral;
+  font-size: 50px;
+  }
+  
+  .container_sentence {
+   
+  }
+  
+  .container_sentence::-webkit-scrollbar {
+   
+  }
+  
+  .container_sentence::-webkit-scrollbar-track {
+    
+  }
+  
+  .container_sentence::-webkit-scrollbar-thumb {
+    
+  }
+  
+  .sentence,
+  .subtitle {
+    
+  }
+  
+  .list {
+    display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  }
+  
+  .unit {
+    font-size: 20px;
+  margin-right: 12px;
+  background-color: #000;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid coral;
+  }
+  
+  .rating_container {
+    display: flex;
+    gap: 11rem;
+    
+  }
+  
+  .rating {
+    font-size: 20px;
+    margin-right: 0;
+    background-color: #000;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid coral;
+    
+  }
+  
+  .back_tohome {
+    width: 70px;
+    height: 70px;
+    display: absolute;
+  
+    
+    
+  }
+  
+  .link {
+    
+  }
+  
+  .back_tohome:hover {
+   
+   
+  }
+  
+  .link:hover {
+    
+  }
+  
+  .logo {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 20px;
+    margin-right: 0;
+    background-color: #000;
+    padding: 1px;
+    border-radius: 10px;
+    border: 1px solid coral;
+    width: 70px;
+    height: 50px;
+     
+  }
+  

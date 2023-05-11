@@ -1,0 +1,22 @@
+.home{
+  
+  
+}
+.button{
+    position: relative;
+    top: 18rem;
+    left: 42%;
+    font-size: 5rem;
+    
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    
+  
+  font-family: var(--font-special-titles);
+  z-index: 2;
+}
+h1{
+
+}

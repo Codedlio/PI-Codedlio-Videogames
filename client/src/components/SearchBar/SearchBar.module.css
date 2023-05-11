@@ -1,0 +1,39 @@
+.button {
+    border-style: none;
+    padding: 0;
+    background-color: black;
+    color: rgb(235, 228, 226);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+form {
+    display: inline-flex;
+    gap: 1rem;
+}
+.button:hover {
+    background: black;
+    color: coral;
+    
+}
+
+
+.search {
+    font-size: .9rem;
+    text-align: left;
+    width: calc(100% - 4rem);
+    max-width: 30rem;
+    padding: .4rem;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    opacity: .8;
+    outline: none;
+    
+}
+.search:focus-within{
+    border: solid 1px coral;
+    border-radius: 2px;
+    
+    
+}
