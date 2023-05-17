@@ -11,7 +11,7 @@ const AllGames = () => {
     const [page, setPage] = useState(1);
     const [input, setInput] = useState(1);
     const byPage = 15;
-  
+    
     
     const dispatch = useDispatch();
     const {  videogamesFiltered, error } = useSelector(
@@ -72,12 +72,14 @@ const AllGames = () => {
       if (Object.keys(error).length) {
         return (
           <div>
+            <Filters filters={filters} setPage={setPage} setInput={setInput} />
             <NotFound/>
           </div>
         );
       } else {
         return (
           <div>
+            
             <Loading/>
           </div>
         );

@@ -18,14 +18,16 @@ if(!name || !description || !platforms ||!genres || !released ||!rating||!image 
     throw {message: 'The game already exist! Choose another name.'}
   }
   const newGame = await Videogame.create({
-    name,description,platforms,image,released,rating
+    name,description,platforms,image,released,rating,genres
   })
   
   const allGenres = await getGenres();
   
-  const filterGenres = allGenres.filter(genre => genres.includes(genre.name))
+  const filterGenres = allGenres.filter(genre => genres.includes(genre.id))
 
-  newGame.addGenres(filterGenres)
+  newGame.addGenres(filterGenres);
+
+
 
   return {
     message: "New game added successfull!",

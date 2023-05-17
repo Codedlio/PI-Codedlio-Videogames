@@ -22,7 +22,7 @@ const GameForm = () => {
     genres: [],
     platforms: [],
   });
-  //const [ swiched, setSwiched ] = useState(true)
+ 
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const GameForm = () => {
     setErrors(validateInputs(inputs));
   }, [inputs]);
 
-  //console.log(allGenres)
+  
 
   let allPlatforms = [
     "Xbox",
@@ -103,17 +103,18 @@ const GameForm = () => {
   };
 
   const handleChecksGenres = (e) => {
-    console.log(e);
+    
     if (e.target.checked) {
+      console.log(e.target.value);
       setInputs({
         ...inputs,
-        genres: [...inputs.genres, e.target.value],
+        genres: [...inputs.genres, parseInt(e.target.value)],
       });
       setErrors(validateInputs(inputs));
     } else {
       setInputs({
         ...inputs,
-        genres: inputs.genres.filter((g) => g !== e.target.value),
+        genres: inputs.genres.filter((g) => g !==e.target.value),
       });
       setErrors(validateInputs(inputs));
     }
@@ -121,6 +122,7 @@ const GameForm = () => {
 
   const handleChecksPlatforms = (e) => {
     if (e.target.checked) {
+      console.log(e.target.value);
       setInputs({
         ...inputs,
         platforms: [...inputs.platforms, e.target.value],
@@ -141,9 +143,11 @@ const GameForm = () => {
     if (!inputs.released) {
       inputs.released = Date.now();
     }
-    console.log(inputs.genres);
-    axios.post("http://localhost:3001/videogames", inputs);
-    
+    if (!Object.keys(errors).length) {
+       
+   
+      axios.post("http://localhost:3001/videogames", inputs);
+     console.log(inputs);
 
     setInputs({
       name: "",
@@ -157,6 +161,12 @@ const GameForm = () => {
     window.sessionStorage.clear();
     alert("Game created successfully");
     window.location.reload();
+    }else{
+      // Detiene el envío del formulario
+      e.preventDefault();
+      alert("Please fix the errors before submitting the form.");
+      return;
+    }
     
   };
 
@@ -238,11 +248,12 @@ const GameForm = () => {
                         <input
                           key={g.id}
                           type="checkbox"
+                          id={`checkbox-${index}`}
                           value={g.id}
                           name="genres"
                           onClick={(e) => handleChecksGenres(e)}
                         />
-                        <label className={style.label_unit}>{g.name}</label>
+                        <label htmlFor={`checkbox-${index}`} className={style.label_unit}>{g.name}</label>
                       </div>
                     );
                   })}
@@ -262,10 +273,11 @@ const GameForm = () => {
                           key={index}
                           type="checkbox"
                           value={pt}
+                          id={`checkboxPl-${index}`}
                           name="platforms"
                           onClick={(e) => handleChecksPlatforms(e)}
                         />
-                        <label className={style.label_unit}>{pt}</label>
+                        <label htmlFor={`checkboxPl-${index}`}className={style.label_unit}>{pt}</label>
                       </div>
                     );
                   })}

@@ -1,13 +1,27 @@
 
 @import url('../../styles/variables.css');
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: coral;
+  
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #dd7777;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: coral black ;
+}
 body{
   background-color: rgb(27, 21, 19);
   box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.5);
 }
-.mayor {
-  @import url('../../styles/variables.css');
-  
-  }
+
  
   
   .container_creategame {
@@ -20,7 +34,14 @@ body{
   margin: 0 auto;
   margin-top: 4rem;
   padding-bottom: 6rem;
-  background-color: rgb(45, 39, 39);
+  border-radius: 5px;
+  background-color: rgb(45, 39, 39,0.99);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55)), url(../../media/piedra5.jpg);
+  background-color: rgba(63, 52, 52, 0.033);
+   /* Ajusta el tamaño de la imagen para cubrir el fondo */
+  background-repeat: repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en el fondo */
+  box-shadow: 0 0 20px 8px rgba(163, 72, 67, 0.5);
   }
    
  
@@ -38,6 +59,7 @@ body{
     transition: opacity 1s ease 0s;
     box-shadow: 0 0 20px 20px rgba(68, 39, 38, 0.65);
   }
+  img:active,
   img:hover {     
         
     opacity: .8   
@@ -45,11 +67,6 @@ body{
   .main_image {
     
     position: relative;
-    
-    
-  }
-  .description_container {
-    
     
   }
   .description_container::-webkit-scrollbar {
@@ -72,28 +89,10 @@ text-align: justify;
     text-align: left;
   color: coral;
   font-size: 50px;
+
   }
   
-  .container_sentence {
-   
-  }
-  
-  .container_sentence::-webkit-scrollbar {
-   
-  }
-  
-  .container_sentence::-webkit-scrollbar-track {
-    
-  }
-  
-  .container_sentence::-webkit-scrollbar-thumb {
-    
-  }
-  
-  .sentence,
-  .subtitle {
-    
-  }
+
   
   .list {
     display: flex;
@@ -135,18 +134,7 @@ text-align: justify;
     
   }
   
-  .link {
-    
-  }
   
-  .back_tohome:hover {
-   
-   
-  }
-  
-  .link:hover {
-    
-  }
   
   .logo {
     display: flex;
@@ -163,3 +151,36 @@ text-align: justify;
      
   }
   
+  @media (max-width: 768px) {
+    .data_container {
+      width: 100%;
+      column-gap: 2rem;
+      row-gap: 1rem;
+      text-align: center;
+    }
+  
+    .list {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+  
+    .unit {
+      font-size: 16px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .title {
+      text-align: left;
+    color: coral;
+    font-size: 20px;
+    }
+     .data_container {
+      width: 80%;
+      column-gap: 1rem;
+      text-align: justify;
+    }
+    p{
+      font-size: 14px;
+    }
+  }

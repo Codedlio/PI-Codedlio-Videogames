@@ -1,7 +1,7 @@
 .button {
     border-style: none;
     padding: 0;
-    background-color: black;
+    background: transparent;
     color: rgb(235, 228, 226);
     font-size: 1.2rem;
     cursor: pointer;
@@ -11,8 +11,9 @@ form {
     display: inline-flex;
     gap: 1rem;
 }
+.button:active,
 .button:hover {
-    background: black;
+    
     color: coral;
     
 }

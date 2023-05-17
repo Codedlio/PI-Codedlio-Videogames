@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NotFound from "../NotFound/NotFound"
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   sortGamesByName,
@@ -91,7 +91,8 @@ const Filters = ({ filters, setPage, setInput }) => {
     window.location.reload();
   };
   if(hasError){
-   
+   alert("Not found")
+   window.location.reload();
   }
   return (
     
@@ -110,11 +111,12 @@ const Filters = ({ filters, setPage, setInput }) => {
                   className={style.input_style}
                   key={g.id}
                   type="checkbox"
+                  id={`checkbox-${i}`} 
                   value={g.name}
                   name="genres"
                   onClick={(e) => handleClickFilter(e)}
                 />
-                <label className={style.nameGenre}> {g.name}</label>
+                <label htmlFor={`checkbox-${i}`} className={style.nameGenre}> {g.name}</label>
               </div>
             );
           })}
@@ -122,7 +124,7 @@ const Filters = ({ filters, setPage, setInput }) => {
       </div>
 
       <div className={style.unit_select}>
-        <p>By Name</p>
+        <p></p>
         <div className={style.container_filter_by_genre}>
           <div className={style.bygenre_container}>
             <input
@@ -130,38 +132,41 @@ const Filters = ({ filters, setPage, setInput }) => {
               value="A-Z"
               key="1"
               type="radio"
+              id="radioAZ"
               name="Alphabetic_Order"
               onClick={(e) => handleClickSort(e)}
             />
-            <label className={style.nameGenre}> Upward A-Z</label>
+            <label htmlFor="radioAZ" className={style.nameGenre}> Upward A-Z</label>
           </div>
           <div className={style.bygenre_container}>
             <input
               className={style.input_style}
               value="Z-A"
               key="2"
+              id="radioZA"
               type="radio"
               name="Alphabetic_Order"
               onClick={(e) => handleClickSort(e)}
             />
-            <label className={style.nameGenre}> Falling Z-A</label>
+            <label htmlFor="radioZA" className={style.nameGenre}> Downward Z-A</label>
           </div>
         </div>
       </div>
 
       <div className={style.unit_select}>
-        <p>By Rating</p>
+        <p></p>
         <div className={style.container_filter_by_genre}>
           <div className={style.bygenre_container}>
             <input
               className={style.input_style}
               value="Minor to Mayor"
               key="minTMay"
+              id="radioDown"
               type="radio"
               name="Sort_Ranking"
               onClick={(e) => handlerClickRating(e)}
             />
-            <label className={style.nameGenre}>Worst-Best</label>
+            <label htmlFor="radioDown" className={style.nameGenre}>Worst-Best</label>
           </div>
           <div className={style.bygenre_container}>
             <input
@@ -169,10 +174,11 @@ const Filters = ({ filters, setPage, setInput }) => {
               value="Mayor to Minor"
               key="MaTmi"
               type="radio"
+              id="radioUp"
               name="Sort_Ranking"
               onClick={(e) => handlerClickRating(e)}
             />
-            <label className={style.nameGenre}>Best-Worst</label>
+            <label htmlFor="radioUp" className={style.nameGenre}>Best-Worst</label>
           </div>
       
         </div>

@@ -1,22 +1,49 @@
-.home{
-  
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
 }
-.button{
-    position: relative;
-    top: 18rem;
-    left: 42%;
-    font-size: 5rem;
-    
-    background-color: transparent;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
-    
-  
-  font-family: var(--font-special-titles);
-  z-index: 2;
-}
-h1{
 
+.buttonContainer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-size: 2.5rem;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  z-index: 2;
+  color: black;
+
+}
+
+.videoContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

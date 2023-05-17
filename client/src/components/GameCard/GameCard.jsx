@@ -3,6 +3,7 @@ import { getVideogameDetail } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 const GameCard = (props) => {
+    
     const dispatch = useDispatch()
     //console.log(props.image);
     const handleOnClick = () => {

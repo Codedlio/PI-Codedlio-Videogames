@@ -3,29 +3,25 @@ import style from "./Pagination.module.css";
 
 
 const Pagination = ({ page, setPage, max, input, setInput }) => {
+  
   const nextPage = () => {
-    setInput(input + 1);
-    setPage(page + 1);
+    const newPage = page + 1;
+    setInput(newPage);
+    setPage(newPage);
   };
 
   const previousPage = () => {
-    setInput(input - 1);
-    setPage(page - 1);
+    const newPage = page - 1;
+    setInput(newPage);
+    setPage(newPage);
   };
 
   const onKeyDown = (e) => {
     if (e.keyCode === 13) {
-      //Click on Enter
-      setPage(parseInt(e.target.value));
-      if (
-        parseInt(e.target.value) < 1 ||
-        parseInt(e.target.value) > max ||
-        isNaN(parseInt(e.target.value))
-      ) {
-        setPage(1);
-        setInput(1);
-      } else {
-        setPage(parseInt(e.target.value));
+      const newPage = parseInt(e.target.value);
+      if (newPage >= 1 && newPage <= max && !isNaN(newPage)) {
+        setPage(newPage);
+        setInput(newPage);
       }
     }
   };
@@ -41,11 +37,11 @@ const Pagination = ({ page, setPage, max, input, setInput }) => {
         className={style.back_page}
         onClick={previousPage}
       >
-        <img  alt="◀" />
+        <img alt="◀" />
       </button>
       <input
-        onChange={(e) => onChange(e)}
-        onKeyDown={(e) => onKeyDown(e)}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
         name="pages"
         value={input}
         autoComplete="off"
@@ -57,7 +53,7 @@ const Pagination = ({ page, setPage, max, input, setInput }) => {
         className={style.forward_page}
         onClick={nextPage}
       >
-        <img  alt="▶" />
+        <img alt="▶" />
       </button>
     </div>
   );

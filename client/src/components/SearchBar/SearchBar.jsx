@@ -7,9 +7,7 @@ import style from './SearchBar.module.css'
 
 const SearchBar = () => {
     const dispatch = useDispatch();
-   
     
-
     const [ game, setGame ] = useState("")
 
     const handleSubmit = (e) => {
@@ -17,6 +15,8 @@ const SearchBar = () => {
         e.preventDefault();
         dispatch(getVideogames(game));
         setGame("")
+        
+        
     }
 
 

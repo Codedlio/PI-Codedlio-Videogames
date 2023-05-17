@@ -1,29 +1,38 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
+import {  useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import style from "./Detail.module.css";
 import backApp from "../../media/image9.png"
-import { getVideogameDetail } from "../../redux/actions"; 
-const Detail = () => {
+
+import Loading from "../Loading/Loading"
+// import { useEffect, useState } from "react";
+// import { getVideogameDetail } from "../../redux/actions"; 
+const Detail = ({match}) => {
   // const { id } = match.params;
   const gameDetail = useSelector((state) => state.videogameDetail);
   const errors = useSelector((state) => state.error);
-  // const dispatch=useDispatch();
+ 
+  
+  
 
-  // ( () =>{ 
+  // useEffect( () =>{ 
+    
   //   dispatch(getVideogameDetail(id));
+  //   setInfo(gameDetail)
   // },[]);
 
   if (Object.keys(errors).length) {
     return (
       <div>
-        <h1>Has ocurred an error</h1>
+       <Loading/>
       </div>
     );
   }
+ 
   return (
+    
     <div className={style.mayor}>
-      
+      {gameDetail?(
       <div className={style.container_creategame}>
         <div className={style.container_main_image}>
           <img
@@ -82,8 +91,13 @@ const Detail = () => {
           <p className={style.rating}>{gameDetail.rating}🟊</p>
         </div>
       </div>
-    </div>
-  );
+    
+  )
+  : (
+    <Loading />
+  )};
+  </div>
+  )
 };
 
 export default Detail;

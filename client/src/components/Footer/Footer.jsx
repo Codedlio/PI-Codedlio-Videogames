@@ -9,7 +9,7 @@ const Footer = () => {
           <p>By Codedlio</p>
         </div>
         <div className={styles.links_container}>
-          <a href="https://www.linkedin.com/in/alexis-leon-0b2929266/" target="_blank">
+          <a href="https://www.linkedin.com/in/alexis-leon-/" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"

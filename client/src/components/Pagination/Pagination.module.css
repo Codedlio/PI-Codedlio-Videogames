@@ -11,20 +11,13 @@
     position: inherit;
 }
 
-.back_page:hover,
-.forward_page:hover {
-    
-}
+
 
 .back_page:active,
 .forward_page:active {
    border: coral;
 }
 
-.back_page[disabled],
-.forward_page[disabled] {
-    
-}
 
 img {
     box-shadow: none;
@@ -52,3 +45,17 @@ cursor: text;
 }
 
 
+@media (max-width: 768px) {
+    .paginated_container {
+      flex-direction: column;
+    }
+    .back_page,
+    .forward_page {
+      margin: 10px 0;
+    }
+    .input {
+      max-width: none;
+      width: 30%;
+      margin: 10px 0;
+    }
+  }

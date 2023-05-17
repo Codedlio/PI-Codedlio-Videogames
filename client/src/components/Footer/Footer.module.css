@@ -17,14 +17,14 @@ box-shadow: 0 0 20px 8px rgba(18, 18, 19, 0.65);
     text-align: start;
   }
   .text h1{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: coral;
     text-shadow: 1px 1px 1px rgb(91, 20, 20);
   }
   .text p{
     margin-top: -.5rem;
     color: coral;
-    font-size: 1rem;
+    font-size: .8rem;
   }
   
   .links_container{
@@ -36,10 +36,10 @@ box-shadow: 0 0 20px 8px rgba(18, 18, 19, 0.65);
   }
   .links_container a svg{
     color: coral;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
-  @media (max-width: 584px) {
+  @media (max-width: 784px) {
     .content{
       width: 90%;
     }

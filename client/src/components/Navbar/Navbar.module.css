@@ -1,17 +1,16 @@
 .container_nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 500px;
-  background-color: #008d4e1c;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   box-shadow: 0 0 20px 8px rgba(77, 12, 12, 0.65);
-border-radius: 10px;
+
 }
 
 .container_nav:hover {
-  background-color: #372b2b56;
+  background-color:rgba(74, 53, 46, 0.549);
   
 }
 
@@ -31,7 +30,7 @@ border-radius: 10px;
   color: #fff;
   
 }
-
+.create_link:active,
 .create_link:hover {
   color: coral;
 }
@@ -40,8 +39,20 @@ border-radius: 10px;
   width: 75px;
   height: 75px;
   border-radius: 5px;
+  cursor: pointer;
 }
-
+.logo:active,
 .logo:hover {
   color: #fff;
+}
+@media (max-width: 768px) {
+  .container_nav {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .container_link {
+    font-size: 1.2rem;
+  }
 }

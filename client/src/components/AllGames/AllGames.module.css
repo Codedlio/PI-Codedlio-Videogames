@@ -7,9 +7,13 @@
   align-items: center;
   margin: 0 auto;
   margin-top: 8rem;
-  
-  background-color: rgb(45, 39, 39);
-  box-shadow: 0 0 20px 8px rgba(68, 39, 38, 0.65);
+  border-radius: 6px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../../media/piedra5.jpg);
+  background-color: rgba(63, 52, 52, 0.033);
+   /* Ajusta el tamaño de la imagen para cubrir el fondo */
+  background-repeat: repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en el fondo */
+  box-shadow: 0 0 20px 8px rgba(162, 73, 66, 0.4);
   
 }
 .content_container{

@@ -1,12 +1,12 @@
 
-import React from "react";
+
 import Navbar from "../Navbar/Navbar";
 import AllGames from "../AllGames/AllGames";
 
 
 
 const Home = () => {
-    
+
     return (
         <div className="Home">
             

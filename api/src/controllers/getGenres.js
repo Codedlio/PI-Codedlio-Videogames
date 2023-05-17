@@ -22,6 +22,7 @@ const URL=`https://api.rawg.io/api/genres?key=${API_KEY}`;
   // if(!genres){
   //   throw {message:"Not genre found"}
   // }
+  
   return await Genre.bulkCreate(genres)
 };
 

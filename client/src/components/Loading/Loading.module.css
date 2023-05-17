@@ -1,7 +1,4 @@
-.loading {
-  
-  
-}
+
 .loading_image {
   min-height: calc(100vh - 8rem);
   width: var(--main-width);
@@ -16,4 +13,10 @@
   background-color: rgb(45, 39, 39);
   box-shadow:none;
   
+}
+@media (max-width: 768px) {
+  .loading_image {
+    width: 80%;
+    margin-top: 4rem;
+  }
 }
