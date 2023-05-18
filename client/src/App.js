@@ -7,9 +7,8 @@ import Detail from "./components/Detail/Detail";
 
 import Footer from "./components/Footer/Footer";
 import { useLocation } from "react-router-dom";
-
-
-
+import axios from "axios";
+axios.defaults.baseURL="https://pi-codedlio-videogames-production.up.railway.app"
 
 function App() {
  

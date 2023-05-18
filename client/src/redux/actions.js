@@ -27,7 +27,7 @@ export const getVideogames = (name) => {
         }); 
         }
         
-        const {data} = await axios.get("http://localhost:3001/videogames");
+        const {data} = await axios.get("/videogames");
         window.sessionStorage.setItem("allGames", JSON.stringify(data));
         //console.log(videogames)
         return dispatch({
@@ -36,7 +36,7 @@ export const getVideogames = (name) => {
         });
       } else {
         const {data} = await axios.get(
-          `http://localhost:3001/videogames?name=${name}`
+          `/videogames?name=${name}`
         );
         
         return dispatch({
@@ -57,7 +57,7 @@ export const getVideogameDetail = (id) => {
   return async function (dispatch) {
     try {
       const {data} = await axios.get(
-        `http://localhost:3001/videogames/${id}`
+        `/videogames/${id}`
       );
       
       return dispatch({

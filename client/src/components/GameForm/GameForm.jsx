@@ -146,7 +146,7 @@ const GameForm = () => {
     if (!Object.keys(errors).length) {
        
    
-      axios.post("http://localhost:3001/videogames", inputs);
+      axios.post("/videogames", inputs);
      console.log(inputs);
 
     setInputs({
