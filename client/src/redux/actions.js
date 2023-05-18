@@ -89,7 +89,7 @@ export const getGenres = () => {
         });
       } else {
         // Si los géneros no están almacenados en sessionStorage, hacemos la petición a la API
-        const response = await axios.get("http://localhost:3001/genres");
+        const response = await axios.get("/genres");
         const genres = response.data;
         // Guardamos los géneros en sessionStorage
         window.sessionStorage.setItem("genres", JSON.stringify(genres));
